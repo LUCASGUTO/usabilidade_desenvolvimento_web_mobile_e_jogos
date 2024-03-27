@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 02</title>
+
+    <script>
+        var name = null;
+        var last_name = null;
+        var ra = null;
+
+        function salvarAluno(){
+            let inputNome = document.getElementById("name");
+            let inputSobreNome = document.getElementById("surname");
+            let inputRA = document.getElementById("studentid");
+            
+            const name = inputNome.value;
+            const sobreNome = inputSobreNome.value;
+            const matricula = inputRA.value;
+
+            alert(`Aluno ${name} ${sobreNome}`);
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Aula 02 - Usabilidade, desenvolvimento web e Mobile</h1>
+
+    <p>Cadastro de alunos:</p>
+
+    <input id ="name" placeholder="Nome">
+
+    <br>
+    <br>
+    <input id = "surname" placeholder="Sobrenome">
+    
+    <br>
+    <br>
+    <input id="studentid" placeholder="R.A">
+
+    <br>
+    <br>
+    <button onclick = "salvarAluno()"> Salvar </button>
+
+
+
+</body>
+
+</html>

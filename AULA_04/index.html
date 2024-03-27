@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AULA_04</title>
+
+    <style>
+        body {
+            background-color: rgb(65, 60, 60); 
+            color:white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        input{
+            background-color: rgb(65, 60, 60); 
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        button{
+            background-color: black;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        button:hover{
+            background-color: #ff5100;
+            color: rgb(255, 255, 255);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        p{
+            background-color: rgb(65, 60, 60); 
+            color:white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+    </style>
+
+    <script>
+        const listaAlunos = []
+
+        function salvarAlunos(){
+            
+            const elementoNomeAluno = document.getElementById("nomeAluno")
+            const nomeAluno = elementoNomeAluno.value
+
+            const elementoRaAluno = document.getElementById("raAluno")
+            const raAluno = elementoRaAluno.value
+
+            const elementoEmailAluno = document.getElementById("emailAluno")
+            const emailAluno = elementoEmailAluno.value
+
+            console.log(nomeAluno)
+            console.log(raAluno)
+            console.log(emailAluno)
+
+            document.getElementById("nomeAluno").value=""
+            document.getElementById("raAluno").value=""
+            document.getElementById("emailAluno").value=""
+
+            const aluno = {
+                nome : nomeAluno,
+                ra : raAluno,
+                email: emailAluno
+            }
+
+            if (aluno.nome == "" || aluno.ra == "" || aluno.email == ""){
+                window.alert("Por favor insira dados válidos!")
+
+                // document.getElementById("nomeAluno").value=""
+                // document.getElementById("raAluno").value=""
+                // document.getElementById("emailAluno").value=""
+            }
+            else{
+                listaAlunos.push(aluno)
+                // console.log(listaAlunos)
+                inserirAluno(aluno)
+            }
+
+        }
+
+        function inserirAluno(aluno){
+            
+            const elementoConteudoAlunos = document.getElementById("conteudoAlunos")
+            
+            const  elementoNovoAluno = document.createElement("p")
+            elementoNovoAluno.innerHTML = `RA:${aluno.ra}  - NOME: ${aluno.nome} - EMAIL: ${aluno.email}`
+
+            elementoConteudoAlunos.appendChild(elementoNovoAluno)
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <h1>Cadastro de alunos</h1>
+        
+        <h3>Formulário</h3>
+
+        <input id="nomeAluno" placeholder="Nome">
+        <br>
+        <br>
+
+        <input id="raAluno" placeholder="RA">
+        <br>
+        <br>
+
+        <input id="emailAluno" placeholder="email">
+        <br>
+        <br>
+        
+        <button onclick="salvarAlunos()">Salvar</button>
+    </div>
+    
+    <div>
+        <h3>Lista de alunos</h3>
+
+        <div id="conteudoAlunos"></div>
+
+    </div>
+    
+</body>
+</html>
