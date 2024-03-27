@@ -46,14 +46,19 @@ function carregarPokemons(){
     //     imagem: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png"
     // }
 
-    pokemons.push(pokemon1)
-    pokemons.push(pokemon2)
-    pokemons.push(pokemon3)
-    pokemons.push(pokemon4)
-    pokemons.push(pokemon5)
+    // pokemons.push(pokemon1)
+    // pokemons.push(pokemon2)
+    // pokemons.push(pokemon3)
+    // pokemons.push(pokemon4)
+    // pokemons.push(pokemon5)
 
     for(let index = 0; index < pokemons.length; index++){
         const pokemon = pokemons[index]
+
+        const id = index + 1
+
+        pokemon.imagem="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/"+ id +".png"
+
         addCardPokemon(pokemon)
     }
 
@@ -72,9 +77,9 @@ function addCardPokemon(pokemon){
 
     const nomeElemento = document.createElement("p")
 
-    imagemElemento.setAttribute("p", pokemon.nome)
+    imagemElemento.setAttribute("p", pokemon.name)
     
-    nomeElemento.textContent=pokemon.nome;
+    nomeElemento.textContent=pokemon.name;
 
     divElemento.appendChild(nomeElemento)
 
