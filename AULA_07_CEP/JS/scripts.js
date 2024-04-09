@@ -1,5 +1,5 @@
 
-function carregarEndereco(){
+function carregarEndereco(cep){
  
     //const cep ="81720140"
     const requisicaoHTTPP = new XMLHttpRequest()
@@ -7,11 +7,14 @@ function carregarEndereco(){
     requisicaoHTTPP.send()
 
     const resposta=JSON.parse(requisicaoHTTPP.responseText)
+
+    const enderecoFormatado=`${resposta.logradouro},${resposta.complemento},${resposta.bairro},${resposta.localidade}`;
     
-    console.log(resposta)  
+    console.log(enderecoFormatado)  
+
+    atualizaHTML(enderecoFormatado);
 
 
-   
     }
     
 
@@ -20,7 +23,16 @@ function carregarEndereco(){
      let elementoEndereco = document.getElementById("id_cep")
     
      const cep = elementoEndereco.value;
+     
      console.log(cep);
 
-     
+     carregarEndereco(cep);
+}
+
+function atualizaHTML(endereco){
+
+const elementoEndereco = document.getElementById("endereco");
+
+elementoEndereco.textContent = endereco;
+
 }
