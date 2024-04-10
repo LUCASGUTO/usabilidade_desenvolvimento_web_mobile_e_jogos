@@ -1,5 +1,8 @@
 
-
+const grupoGrass=["bulbasaur","ivysaur","venusaur","pidgey","pidgeotto","pidgeot"]
+const grupoFire=["charmander","charmeleon","charizard"]
+const grupoWater=["squirtle",'wartortle','blastoise']
+const grupoEarth=["caterpie","metapod","butterfree","weedle","kakuna","beedrill","rattata","raticate"]
 
 
 function carregarPokemons(){
@@ -30,21 +33,37 @@ function carregarPokemons(){
 }
 
 function addCardPokemon(pokemon){
+
+    
+    console.log(pokemon)
+
     const imagemElemento = document.createElement("img")
 
     imagemElemento.setAttribute("src", pokemon.imagem)
 
 
     const divElemento = document.getElementById("conteudo-pokemon")
-    
+    divElemento.classList.add("card")
     divElemento.appendChild(imagemElemento)
-
+    
 
     const nomeElemento = document.createElement("p")
 
     imagemElemento.setAttribute("p", pokemon.name)
     
     nomeElemento.textContent=pokemon.name;
+
+    if(grupoGrass.includes(pokemon.name)){
+        nomeElemento.classList.add("grass")
+   }else if(grupoFire.includes(pokemon.name)){
+        nomeElemento.classList.add("fire")
+
+   }else if(grupoWater.includes(pokemon.name)){
+        nomeElemento.classList.add("water")
+
+   }else if(grupoEarth.includes(pokemon.name)){
+    nomeElemento.classList.add("earth")
+   }
 
     divElemento.appendChild(nomeElemento)
 
