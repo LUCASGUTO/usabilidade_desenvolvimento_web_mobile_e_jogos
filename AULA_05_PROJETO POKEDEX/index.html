@@ -1,84 +1,72 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex do luquinhas</title>
-    <link rel="icon" href="icons/psyduck.ico" type="image/x-icon">
-    <script src="js/scripts.js"></script>
+    <head>
+        <title>Pokedex</title>
+        <script src="js/scripts.js"></script>
 
-<style>
-/* padronização */
-h1{
+        <style>
 
-color: blue !important;
-font-size: larger!important;
+            h1{
+                color: blue;
+                font-size: larger; 
+            }
 
-}
+            .header{
+                color: black;
+                font-size: larger; 
+            }
 
-/* classes para definição e instanciar objetos */
+            .footer{
+                color: azure;
+                font-size: larger; 
+            }
 
-.header {
-color: black;
-font-size: larger;
+            .agua{
+                color: azure;
+                font-size: larger; 
+            }
 
+            .fogo{
+                color: orange;
+                font-size: larger; 
+            }
 
-}
+            .grama{
+                color: greenyellow;
+                font-size: larger; 
+            }
 
-.footer{
-color: azure;
-font-size: larger;
+            .terra{
+                color: burlywood;
+                font-size: larger; 
+            }
 
-}
+            .card{
+                border-color: grey;
+                border-width: 1px;
+                border-style: solid;
+                width: 30%;
+            }
 
-.fire{
-color: orangered;
-font-size: larger;
-}
-
-
-.water{
-color: blue;
-font-size: larger;
-}
-
-
-.grass{
-color: greenyellow;
-font-size: larger;
-}
-
-
-.earth{
-color: maroon;
-font-size: larger;
-}
-
-.card  {
-border-color: gray;
-border-width: 1px;
-border-style: solid;
+            #conteudo-pokemon{
+                display: flex;
+                flex-wrap: wrap;
+            }
 
 
-}
-
-</style>
-
-
-</head>
-
-<body onload="carregarPokemons()">
-
-    <h1 class="header">Lista de Pokemon</h1>
-
-    <div id="conteudo-pokemon"></div>
+        </style>
     
-    <h1 class="footer"> Final da Lista</h1>
+    </head>
 
-</body>
+    <body onload="carregarPokemons()">
 
+        <h1 class="header">Lista de Pokemons</h1>
 
+        <div id="conteudo-pokemon"></div>
 
+        <h1 class="footer">Final da Lista</h1>
+
+    </body>
 
 </html>
