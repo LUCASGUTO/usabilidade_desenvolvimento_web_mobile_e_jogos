@@ -10,7 +10,7 @@ function carregarEndereco(cep){
 
     const enderecoFormatado=`${resposta.logradouro},${resposta.complemento},${resposta.bairro},${resposta.localidade}`;
     
-    console.log(enderecoFormatado)  
+     console.log(enderecoFormatado)  
 
     atualizaHTML(enderecoFormatado);
 
